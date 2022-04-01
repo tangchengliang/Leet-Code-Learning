@@ -7,6 +7,10 @@ public class Leet_46_permutations {
         int[] nums = {1,2,3};
         int len = nums.length;
         // 创建一个res , 用于接收排列结果
+        if (len == 0){
+            System.out.println(res);
+            return;
+        }
         List<ArrayList<Integer>> res = new ArrayList<>();
         //  Deque 是一个双端队列（两端都可进出），代替Stack
         Deque<Integer> path = new ArrayDeque<>();
