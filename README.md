@@ -19,5 +19,6 @@ DFS--->
  难度：中等
  - **关键**：依次加入砝码，并用该砝码和之前所有可能的结果作 a+b，|a-b|
  - 用HasSet存储，避免存放重复的值
+ - [code](https://github.com/tangchengliang/Leet-Code-Learning/blob/main/src/main/java/lanqiao/test_12_weight_count.java)
 
   
