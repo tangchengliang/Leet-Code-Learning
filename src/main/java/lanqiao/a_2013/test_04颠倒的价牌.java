@@ -13,12 +13,56 @@ package src.main.java.lanqiao.a_2013;
  */
 public class test_04颠倒的价牌 {
     public static void main(String[] args) {
-    // 枚举4位数，简单筛选
+    ArrayList<Price> a1 = new ArrayList<Price>();
+		ArrayList<Price> a2 = new ArrayList<Price>();
+		//枚举数字
+		for(int i=1001;i<10000;i++) {
+			String s = String.valueOf(i);
+			if(s.contains("3")||s.contains("4")||s.contains("7")) continue;
+		//翻转，作差，-200一个list，+500一个list
+			String s1 = reverse(s);
+			Integer i1 = Integer.parseInt(s1);
+			int plus = i1-i;
+			if(plus<-200 && plus>-300) {
+				a1.add(new Price(i,plus));
+			}
+			if(plus<900 && plus>800) {
+				a2.add(new Price(i,plus));
+			}
+		// 寻找结果	
+			for (Price price : a1) {
+				for (Price price2 : a2) {
+					if(price.plus+price2.plus==558) {
+						System.out.println(price.p+"   "+price.plus);
+						System.out.println(price2.p+"   "+price2.plus);
+					}
+				}
+			}
+		}
+	}
 
-    // 将其颠倒和原价做差，将赔了200多的放入一个集合，将赚了800多放入一个集合
-
-    // 遍历两个集合两两组合，检查是否和为558
-
-    // 输出结果
-    }
+	private static String reverse(String s) {
+		// TODO Auto-generated method stub
+		char[] s1 = s.toCharArray();
+		char[] ans =new char[4];
+		for(int i=s.length()-1,j=0;i>=0;i--,j++) {
+			char c = s1[i];
+			if(c=='9') {
+				ans[j]='6';
+			}else if(c=='6') {
+				ans[j]='9';
+			}else {
+				ans[j]=c;
+			}
+		}
+		return new String(ans);
+	}
+	private static class Price{
+		int p;
+		int plus;
+		public Price(int p, int plus) {
+			this.p = p;
+			this.plus = plus;
+		}	
+	}
 }
