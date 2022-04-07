@@ -12,6 +12,7 @@ package src.main.java.lanqiao.a_2013;
      答案是一个整数，请通过浏览器直接提交该数字。
      注意：不要提交解答过程，或其它辅助说明类的内容。
 
+    递归，计数 f(n)=f(n)+f(n-1)
  */
 public class test_02振兴中华 {
     public static void main(String[] args) {
