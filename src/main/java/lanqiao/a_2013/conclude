@@ -1,0 +1,8 @@
+01 世纪末的星期 Calendar
+02 振兴中华 递归
+03 大数 BigInteger
+04 颠倒的价牌 枚举，新建class Price存放多个成对数据
+07 错误票据   处理输入： sc.nextLine();
+            列表排序：Collections.sort(arr);
+08 带分数    全排列，枚举，位置插入
+

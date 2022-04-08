@@ -1,6 +1,6 @@
-package src.main.java.lanqiao;
+package src.main.java.lanqiao.a_2014;
 
-public class test_05_li_bai_wine {
+public class test_02李白打酒 {
     static int count=0;
     public static void main(String[] args) {
         dfs(5,9,2);

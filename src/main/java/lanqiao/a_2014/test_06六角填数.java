@@ -1,6 +1,6 @@
-package src.main.java.lanqiao;
+package src.main.java.lanqiao.a_2014;
 
-public class test_05_hex_fill_num {
+public class test_06六角填数 {
     public static void main(String[] args) {
         int arr[] = {2,4,5,6,7,9,10,11,12};
         f(arr,0);
