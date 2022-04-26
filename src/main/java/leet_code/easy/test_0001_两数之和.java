@@ -25,6 +25,7 @@ public class test_0001_两数之和 {
         for (int i = 0; i < arr.length; ++i) {
            if(hm2.containsKey(target-arr[i])){
                System.out.println("["+hm2.get(target-arr[i])+","+i+"]");
+               break;
            }
            hm2.put(arr[i],i);
         }
