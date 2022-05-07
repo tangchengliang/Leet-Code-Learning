@@ -1,4 +1,4 @@
-package src.main.java.data_structure.linkedlist;
+package src.main.java.data_structure._02_linkedlist;
 
 public class SingleLinkedListDemo {
     public static void main(String[] args) {

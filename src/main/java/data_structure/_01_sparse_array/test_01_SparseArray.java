@@ -1,4 +1,4 @@
-package src.main.java.data_structure.sparse_array;
+package src.main.java.data_structure._01_sparse_array;
 
 public class test_01_SparseArray {
     public static void main(String[] args) {
