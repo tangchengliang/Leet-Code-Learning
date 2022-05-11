@@ -8,7 +8,7 @@ public class InsertSort {
         int[] arr = {1, 5, 9, 2, 7, 5, 4};
         System.out.println("排序前:" + Arrays.toString(arr));
         insertSort(arr);
-        System.out.println("排序前:" + Arrays.toString(arr));
+        System.out.println("排序后:" + Arrays.toString(arr));
     }
 
     private static void insertSort(int[] arr) {

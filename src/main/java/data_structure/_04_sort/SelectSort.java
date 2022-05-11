@@ -7,7 +7,7 @@ public class SelectSort {
         int[] arr = {1, 5, 9, 2, 7, 5, 4};
         System.out.println("排序前:" + Arrays.toString(arr));
         selectSort(arr);
-        System.out.println("排序前:" + Arrays.toString(arr));
+        System.out.println("排序后:" + Arrays.toString(arr));
     }
 
     private static void selectSort(int[] arr) {

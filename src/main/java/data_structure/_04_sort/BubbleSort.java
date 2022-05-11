@@ -7,7 +7,7 @@ public class BubbleSort {
         int[] arr = {1, 5, 9, 2, 7, 5, 4};
         System.out.println("排序前:" + Arrays.toString(arr));
         bubbleSort(arr);
-        System.out.println("排序前:" + Arrays.toString(arr));
+        System.out.println("排序后:" + Arrays.toString(arr));
     }
 
     public static void swap(int[] arr, int i, int j) {
