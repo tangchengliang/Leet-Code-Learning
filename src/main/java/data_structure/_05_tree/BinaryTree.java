@@ -219,16 +219,17 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         afterErgodic(root, keys);
         return keys;
     }
-    private void afterErgodic(Node x, Queue<Key> keys){
-        if (x==null){
+
+    private void afterErgodic(Node x, Queue<Key> keys) {
+        if (x == null) {
             return;
         }
         // 1.找到当前结点的左子树，如果不为空，递归遍历左子树
-        if(x.left!=null){
-            afterErgodic(x.left,keys);
+        if (x.left != null) {
+            afterErgodic(x.left, keys);
         }
         // 2.找到当前结点的右子树，如果不为空，递归遍历右子树
-        if(x.right!=null){
+        if (x.right != null) {
             afterErgodic(x.right, keys);
         }
         // 3.把当前结点的key放入到队列中;
@@ -236,26 +237,51 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
     }
 
     // 层序遍历
-    public Queue<Key> layerErgodic(){
+    public Queue<Key> layerErgodic() {
 //        1.创建队列，存储每一层的结点；
         Queue<Key> keys = new ArrayDeque<>();
 
         Queue<Node> nodes = new ArrayDeque<>();
         nodes.offer(root);
-        while (!nodes.isEmpty()){
+        while (!nodes.isEmpty()) {
             // 2.使用循环从队列中弹出一个结点：
             Node x = nodes.poll();
             // 2.1获取当前结点的key；
             keys.offer(x.key);
             // 2.2如果当前结点的左子结点不为空，则把左子结点放入到队列中
-            if(x.left!=null){
+            if (x.left != null) {
                 nodes.offer(x.left);
             }
             // 2.3如果当前结点的右子结点不为空，则把右子结点放入到队列中
-            if(x.right!=null){
+            if (x.right != null) {
                 nodes.offer(x.right);
             }
         }
         return keys;
+    }
+
+    // 树的最大深度
+    public int maxDepth() {
+        return maxDepth(root);
+    }
+
+    // 计算指定节点树的最大深度
+    public int maxDepth(Node x) {
+        if (x == null) {
+            return 0;
+        }
+        int l_depth = 0;
+        int r_depth = 0;
+        int max;
+        // 计算左子树的最大深度
+        if (x.left != null) {
+            l_depth = maxDepth(x.left);
+        }
+        // 计算右子树的最大深度
+        if (x.right != null) {
+            r_depth = maxDepth(x.right);
+        }
+        max = l_depth > r_depth ? l_depth + 1 : r_depth + 1;
+        return max;
     }
 }
