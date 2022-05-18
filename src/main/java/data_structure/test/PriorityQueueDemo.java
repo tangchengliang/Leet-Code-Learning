@@ -9,7 +9,7 @@ public class PriorityQueueDemo {
         String[] arr = {"S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"};
         System.out.println("---------最大优先队列——————————");
         MaxPriorityQueue<String> maxpq = new MaxPriorityQueue<>(20);
-        for(String s: arr){
+        for(String s: arr) {
             maxpq.insert(s);
         }
         System.out.println(maxpq.size());
