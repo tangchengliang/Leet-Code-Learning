@@ -3,7 +3,7 @@ package src.main.java.sword_offer._01_integer;
 public class _02_addBinary {
     public static void main(String[] args) {
         String a = "11";
-        String b = "01";
+        String b = "10";
         String result = addBinary(a, b);
         System.out.println(a + "+" + b + "=" + result);
     }
@@ -22,7 +22,7 @@ public class _02_addBinary {
             int digitB = j >= 0 ? b.charAt(j--) - '0' : 0;
             int sum = digitA + digitB + carry;
             carry = sum >= 2 ? 1 : 0; // 每次最多进一位
-            sum = sum >= 2 ? sum - 2 : 0;
+            sum = sum >= 2 ? sum - 2 : sum;
             sb.append(sum);
         }
         // 遍历完后，判断是否还有进位
