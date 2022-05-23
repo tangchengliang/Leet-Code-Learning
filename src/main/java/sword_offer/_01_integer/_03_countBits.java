@@ -7,6 +7,7 @@ package src.main.java.sword_offer._01_integer;
         （3）i为偶数，i/2 左移一位，得到i，1的个数不变
             i为奇数，i/2 左移一位，最右边设为1，得到1的个数+1
             注意：解答中，是将i右移>>
+       （4）判断奇偶数 (1 & i)
  */
 
 import java.util.Arrays;
@@ -16,11 +17,11 @@ public class _03_countBits {
         int num = 5;
         int[] arr = new int[num + 1];  // 记录结果的数组,(0——num, 所以num+1)
         arr = countBits(num);      // 调用计算方法
-        System.out.println("方法1="+Arrays.toString(arr));
+        System.out.println("方法1=" + Arrays.toString(arr));
         arr = countBits2(num);
-        System.out.println("方法2="+Arrays.toString(arr));
+        System.out.println("方法2=" + Arrays.toString(arr));
         arr = countBits3(num);
-        System.out.println("方法3="+Arrays.toString(arr));
+        System.out.println("方法3=" + Arrays.toString(arr));
 
     }
 
@@ -47,10 +48,10 @@ public class _03_countBits {
     }
 
     // 解法3
-    private static int[] countBits3(int num){
+    private static int[] countBits3(int num) {
         int[] result = new int[num + 1];
         for (int i = 1; i <= num; i++) {
-            result[i] = result[i>>1] + (i&1);
+            result[i] = result[i >> 1] + (i & 1);
         }
         return result;
     }
