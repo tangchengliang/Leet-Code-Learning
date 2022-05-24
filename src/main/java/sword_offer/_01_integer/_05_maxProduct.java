@@ -2,7 +2,7 @@ package src.main.java.sword_offer._01_integer;
 
 public class _05_maxProduct {
     public static void main(String[] args) {
-        String[] arr = {"abcw", "foodegh", "bar", "fxyz"};
+        String[] arr = {"abcw","baz","foo","bar","xtfn","abcdef"};
         int result = maxProduct_0(arr);
         System.out.println("解法1 = " + result);
         result = maxProduct_1(arr);
@@ -25,13 +25,14 @@ public class _05_maxProduct {
                 int k = 0;
                 // 从a到z，依次判断是否有相同的元素
                 for (; k < 26; k++) {
-                    if (flag[i][k] && flag[j][k]) {
+                    // 注意 & 和 && 的区别
+                    if (flag[i][k] & flag[j][k]) {
                         // 有相同元素，则退出
                         break;
                     }
                 }
                 // 遍历完a到z没有相同元素时，则计算长度
-                // 注意，遍历完最后一位后，k++,得到k=26
+                // 注意，遍历完最后一位后，k++,得到k=26，果果这里不加判断，break之后，就会计算result
                 if (k == 26) {
                     result = Math.max(result, arr[i].length() * arr[j].length());
                 }
@@ -77,5 +78,11 @@ public class _05_maxProduct {
        2.用整数的二进制数位记录字符串中出现的字符（0-false，1-true）
             两个二进制数相与，如果结果为0，则表明两个字符串中不存在相同的字符
             26个字符，int型有32位
+
+      3. & 和 &&
+            按位与: 转换成二进制，进行与运算
+            逻辑与： 只要左边为false，右边就不在运算
+
+      4. break 只跳出一层循环
 
  */
