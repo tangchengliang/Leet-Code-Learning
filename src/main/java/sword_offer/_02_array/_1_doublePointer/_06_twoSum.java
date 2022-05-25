@@ -13,6 +13,8 @@ public class _06_twoSum {
         System.out.println("HashMap = " + Arrays.toString(result));
         result = twoSum_2(arr, target);
         System.out.println("HashMap优化 = " + Arrays.toString(result));
+        result = twoSum_3(arr, target);
+        System.out.println("双指针 = " + Arrays.toString(result));
     }
 
 
@@ -56,7 +58,7 @@ public class _06_twoSum {
         int[] result = new int[2];
         HashMap<Integer, Integer> hm = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
-            if(hm.containsKey(target-arr[i])){
+            if (hm.containsKey(target - arr[i])) {
                 // 注意这里，哪一个是第一个数
                 result[0] = hm.get(target - arr[i]);   // 是往前找的数，所有，小的数为hm中找到的那个索引
                 result[1] = i;
@@ -66,4 +68,24 @@ public class _06_twoSum {
         }
         return result;
     }
+
+    // 解法4 双指针
+    private static int[] twoSum_3(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        int[] result = new int[2];
+        while (left < right) {
+            if (arr[left] + arr[right] == target) {
+                result[0] = left;
+                result[1] = right;
+                break;
+            } else if (arr[left] + arr[right] < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return result;
+    }
+
 }
