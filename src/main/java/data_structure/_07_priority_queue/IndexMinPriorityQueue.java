@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class IndexMinPriorityQueue<T extends Comparable<T>> {
     private T[] items;  // 存储元素的数组
     private int N;      // 记录堆中的元素
-    private int[] pq;   //保存每个元素在items数组中的索引
+    private int[] pq;   // 保存每个元素在items数组中的索引
     private int[] qp;   // 保存pq 的逆序，pq值作为索引，pq的索引作为值
 
     public IndexMinPriorityQueue(int capacity) {
@@ -87,7 +87,7 @@ public class IndexMinPriorityQueue<T extends Comparable<T>> {
         // 交换pq中索引1处的值和N处的值
         swap(1,N);
         // 删除qp中索引pq[N]处的值
-       qp[pq[N]] = -1;
+        qp[pq[N]] = -1;
        // 删除pq中索引N的值
         pq[N] = -1;
         // 删除items中最小的元素

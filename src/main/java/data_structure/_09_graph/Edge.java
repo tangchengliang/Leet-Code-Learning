@@ -3,15 +3,15 @@ package src.main.java.data_structure._09_graph;
 public class Edge implements Comparable<Edge> {
     private int v;
     private int w;          // v, 和w是边的两个顶点
-    private int weight;     // weight 是这条边的权重
+    private double weight;     // weight 是这条边的权重
 
-    public Edge(int v, int w, int weight) {
+    public Edge(int v, int w, double weight) {
         this.v = v;
         this.w = w;
         this.weight = weight;
     }
 
-    public int get_weight() {
+    public double get_weight() {
         return weight;
     }
 
@@ -34,6 +34,6 @@ public class Edge implements Comparable<Edge> {
         // < -1
         // > 1
         // = 0
-        return Integer.compare(this.get_weight(), that.get_weight());
+        return Double.compare(this.get_weight(), that.get_weight());
     }
 }
