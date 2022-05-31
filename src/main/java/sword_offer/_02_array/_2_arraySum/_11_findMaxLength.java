@@ -23,8 +23,11 @@ public class _11_findMaxLength {
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i] == 0 ? -1 : 1;
             if (sumToIndex.containsKey(sum)) {
+                // 遇到重复的数，就求和，
+                // 不用添加此重复的数，因为在这之前出现的数的长度，肯定大于此刻的长度
                 max = Math.max(max, i - sumToIndex.get(sum));
             } else {
+                // 不是重复的数，则加入hash表中
                 sumToIndex.put(sum, i);
             }
         }
