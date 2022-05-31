@@ -36,4 +36,5 @@ public class _10_subarraySum {
 
      总结：要求某个区间的和的时候，就可以用末尾的前缀和减去区间开始位置的前缀和即可。
             count加上，之前和中可能存在的结果
+            hash表：key=sum, value=count
  */

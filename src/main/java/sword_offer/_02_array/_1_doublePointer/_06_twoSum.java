@@ -87,5 +87,8 @@ public class _06_twoSum {
         }
         return result;
     }
-
 }
+/*
+    求和为target的两个数：
+        （1）hash表：key=target-arr[i], value=i 索引
+ */
