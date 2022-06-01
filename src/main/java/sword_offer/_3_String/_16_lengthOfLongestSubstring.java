@@ -1,5 +1,8 @@
 package src.main.java.sword_offer._3_String;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class _16_lengthOfLongestSubstring {
     public static void main(String[] args) {
         String s = "pwwkew";
@@ -7,6 +10,25 @@ public class _16_lengthOfLongestSubstring {
         System.out.println(result);
     }
 
+    private static int lengthOfLongestSubstring2(String s){
+        if(s.length()==0){
+            return 0;
+        }
+        int maxL=0;
+        // 使用map来记录元素是否出现，key=char, value=i 索引
+        Map<Character, Integer> map = new HashMap<>();
+        int left=0;
+        for(int right=0;right<s.length();right++){
+            char c = s.charAt(right);
+            if(map.containsKey(c)){
+                // 如果，遇到重复的，就将left指向重复的右边一位
+                left = Math.max(left, map.get(c)+1);
+            }
+            map.put(c, right);
+            maxL=Math.max(maxL, right-left+1);
+        }
+        return maxL;
+    }
     private static int lengthOfLongestSubstring(String s) {
         if(s.length()==0){
             return 0;
