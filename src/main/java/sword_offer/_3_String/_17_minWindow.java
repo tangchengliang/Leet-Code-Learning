@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class _17_minWindow {
     public static void main(String[] args) {
-        String s = "ADOBECODEBANC";
+        String s = "ADOBECAODEBANC";
         String t = "ABC";
         String len = minWindow(s, t);
         System.out.println(len);
