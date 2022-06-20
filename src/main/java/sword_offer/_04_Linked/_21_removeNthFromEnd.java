@@ -10,7 +10,7 @@ public class _21_removeNthFromEnd {
         ListNode l3 = new ListNode(3);
         ListNode l4 = new ListNode(4);
         ListNode l5 = new ListNode(5);
-        singleListLinked s = new singleListLinked();
+        SingleListLinked s = new SingleListLinked();
         s.addNode(l1);
         s.addNode(l2);
         s.addNode(l3);
@@ -18,10 +18,10 @@ public class _21_removeNthFromEnd {
         s.addNode(l5);
         s.list();
         int n = 3;
-        ListNode result = removeNthFromEnd(l1,3);
-        System.out.println("删除倒数"+n+"未后");
+        ListNode result = removeNthFromEnd(l1, 3);
+        System.out.println("删除倒数" + n + "未后");
         s.list();
-        System.out.println("返回的"+result+"头节点");
+        System.out.println("返回的" + result + "头节点");
     }
 
     private static ListNode removeNthFromEnd(ListNode head, int n) {
@@ -37,7 +37,7 @@ public class _21_removeNthFromEnd {
             right = right.next;
         }
         // 接着同时移动两个指针
-        while (right!=null){
+        while (right != null) {
             left = left.next;
             right = right.next;
         }

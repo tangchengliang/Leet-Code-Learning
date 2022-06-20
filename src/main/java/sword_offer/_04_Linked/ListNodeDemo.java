@@ -5,7 +5,7 @@ public class ListNodeDemo {
         ListNode l1 = new ListNode(2);
         ListNode l2 = new ListNode(4);
         ListNode l3 = new ListNode(1);
-        singleListLinked s = new singleListLinked();
+        SingleListLinked s = new SingleListLinked();
         s.addNode(l1);
         s.addNode(l2);
         s.addNode(l3);
@@ -15,7 +15,7 @@ public class ListNodeDemo {
     }
 
 }
-class singleListLinked{
+class SingleListLinked {
     ListNode head = new ListNode(0);
 
     public ListNode getHead(){
@@ -55,6 +55,21 @@ class singleListLinked{
 
     public void list(){
         ListNode temp = head.next;
+        if(temp==null){
+            throw new RuntimeException("没有数据，请添加！");
+        }
+        while (temp!=null){
+            System.out.println(temp);
+            temp = temp.next;
+        }
+    }
+
+    /**
+     *  该方法不包括0的节点，head就是第一个数据
+     * @param head
+     */
+    public void list(ListNode head){
+        ListNode temp = head;
         if(temp==null){
             throw new RuntimeException("没有数据，请添加！");
         }
