@@ -10,11 +10,11 @@ public class _26_reOderList {
         ListNode l5 = new ListNode(5);
         ListNode l6 = new ListNode(6);
         ListNode l7 = new ListNode(7);
-//        l1.next = l2;
-//        l2.next = l3;
-//        l3.next = l4;
-//        l4.next = l5;
-//        l5.next = l6;
+        l1.next = l2;
+        l2.next = l3;
+        l3.next = l4;
+        l4.next = l5;
+        l5.next = l6;
         SingleListLinked s = new SingleListLinked();
         reOderList(l1);
         System.out.println("显示链表");
@@ -56,7 +56,7 @@ public class _26_reOderList {
         // 记录前半链表，即dummy
         slow.next = null;
         // 连接节点
-        addLink(head, halfList, head);
+        addLink(head, halfList, dummy);
 
     }
 
@@ -69,6 +69,7 @@ public class _26_reOderList {
 
             pre.next = node1;
             node1.next = node2;
+            // pre 保留node2节点，方便在下一次pre.next时，起始节点是node2，即第二轮的6
             pre = node2;
 
             node1 = temp;
