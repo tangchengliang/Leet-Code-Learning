@@ -1,4 +1,4 @@
-package src.main.java.sword_offer._3_String;
+package src.main.java.sword_offer._03_String;
 
 /*
     给定一个字符串 s ，验证 s 是否是 回文串 ，只考虑字母和数字字符，可以忽略字母的大小写。
