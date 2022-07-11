@@ -1,4 +1,4 @@
-package src.main.java.sword_offer._02_array._2_arraySum;
+package src.main.java.sword_offer._02_array;
 
 import java.util.HashMap;
 import java.util.Map;
