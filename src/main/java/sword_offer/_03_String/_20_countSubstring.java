@@ -1,4 +1,4 @@
-package src.main.java.sword_offer._3_String;
+package src.main.java.sword_offer._03_String;
 
 public class _20_countSubstring {
     public static void main(String[] args) {

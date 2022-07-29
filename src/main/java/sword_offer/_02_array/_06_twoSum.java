@@ -1,4 +1,4 @@
-package src.main.java.sword_offer._02_array._1_doublePointer;
+package src.main.java.sword_offer._02_array;
 
 import java.util.Arrays;
 import java.util.HashMap;

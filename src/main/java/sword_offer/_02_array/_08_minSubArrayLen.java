@@ -1,4 +1,4 @@
-package src.main.java.sword_offer._02_array._1_doublePointer;
+package src.main.java.sword_offer._02_array;
 
 /*
     求解：最短 区间 之和 <= 给定值
@@ -33,4 +33,5 @@ public class _08_minSubArrayLen {
         （1）还要考虑不存在时，返回0的情况
         （2）条件表达式，优化代码；还可以检验是否有改动的情况
         （3）双指针循环遍历时，且同时往右遍历时，可用一个指针（右指针）充当遍历的i
+        （4）双指针移动创久时，要注意窗口中的SUM如何变化
  */

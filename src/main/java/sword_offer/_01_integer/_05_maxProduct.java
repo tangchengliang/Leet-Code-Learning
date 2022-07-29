@@ -1,5 +1,16 @@
 package src.main.java.sword_offer._01_integer;
 
+/*
+    给定一个字符串数组 words，
+    请计算当两个字符串 words[i] 和 words[j] 不包含相同字符时，它们长度的乘积的最大值。
+    假设字符串中只包含英语的小写字母。如果没有不包含相同字符的一对字符串，返回 0。
+
+    难点：如何快速比较两个字符串是否含有相同的元素？
+        解决：1）小写字母26个，将字符串映射到二维数组中，建立hash，遍历时，指针为0-26个字母，依次取出元素相与并判断是否有相同元素
+
+            2）用二进制数，保存String中出现过的字母，优化计算********
+ */
+
 public class _05_maxProduct {
     public static void main(String[] args) {
         String[] arr = {"abcw","baz","foo","bar","xtfn","abcdef"};
@@ -76,6 +87,7 @@ public class _05_maxProduct {
         （3）求取最大值，考虑  Max.max(result, x)
 
        2.用整数的二进制数位记录字符串中出现的字符（0-false，1-true）
+       难点：如何将字符串中出现的元素，转换成一维二进制数？
             两个二进制数相与，如果结果为0，则表明两个字符串中不存在相同的字符
             26个字符，int型有32位
 

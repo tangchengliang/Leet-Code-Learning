@@ -9,7 +9,7 @@ import java.util.Queue;
 
 public class PrimTest {
     public static void main(String[] args) throws IOException {
-        String filePath = "C:/java_test/Leet-Code-Learning/src/main/java/data_structure/test/grath_data";
+        String filePath = "C:/java_test/Leet-Code-Learning/src/main/java/data_structure/CummonUtil/grath_data";
         FileInputStream fin = new FileInputStream(filePath);        // 读取到的是int型
         InputStreamReader reader = new InputStreamReader(fin);      // 字节流--->字符流
         BufferedReader buffReader = new BufferedReader(reader);     // 有一个readLine的方法，可以读取一整行的文本，作为字符串返回，
