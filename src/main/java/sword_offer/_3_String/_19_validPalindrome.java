@@ -2,7 +2,7 @@ package src.main.java.sword_offer._3_String;
 
 public class _19_validPalindrome {
     public static void main(String[] args) {
-        String s = "arebca";
+        String s = "abba";
         boolean result = validPalindrome(s);
         System.out.println(result);
     }
@@ -16,7 +16,11 @@ public class _19_validPalindrome {
                 break;
             }
         }
+        int a=1;
         // 找到left和right，删除其中一个是否是回文
+        // 如果 本身是奇回文，left==s.length()/2, 例如 abcba--->2=5/2=2
+        // 如果是 偶回文 left==s.length()/2, 例如 abccba----> 3=6/2=3
+        // 注意： for循环结束条件，left++，right--，注意left, right要作为 全局变量
         return left == s.length() / 2 || isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
     }
 

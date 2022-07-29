@@ -3,6 +3,18 @@ package src.main.java.sword_offer._3_String;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+    题目：给定一个字符串 s ，请你找出其中不含有重复字符的 最长连续子字符串 的长度。
+    三种解法：
+        （1）双指针遍历+数组模拟hash--->每次添加，需要扫描一次hash表，最慢
+        （2）在（1）的基础上改进，通过count计数，避免重复扫描hash表
+        （3）直接使用hashmap
+            key=ch, value=index
+            先判断是否有相同的ch时，把left变为最左边的ch+1的位置
+            再加入ch
+            同时计算maxL---->right-left+1
+
+*/
 public class _16_lengthOfLongestSubstring {
     public static void main(String[] args) {
         String s = "pwwkew";
