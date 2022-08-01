@@ -1,7 +1,5 @@
 package src.main.java.sword_offer._02_array;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 import java.util.LinkedList;
 import java.util.List;
 

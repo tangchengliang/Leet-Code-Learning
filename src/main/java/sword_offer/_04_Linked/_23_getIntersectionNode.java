@@ -2,6 +2,16 @@ package src.main.java.sword_offer._04_Linked;
 
 import java.util.Stack;
 
+/*
+    三种方法求解：
+        （1）将链表2的尾结点指向其头节点，问题就变为22
+        （2）利用栈的思想，先放入栈中，再依次比较元素
+        （3）双指针，先计算两链表的长度差，长的链表先移动长度差，再同时移动
+
+        注意 ：不能链表逆序，因为逆序一条，另外一条逆序时，链表就变了
+            例如 123456 --->654321
+                783456 --->12378
+ */
 public class _23_getIntersectionNode {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
@@ -79,11 +89,11 @@ public class _23_getIntersectionNode {
         ListNode temp1 = head1;
         ListNode temp2 = head2;
 
-        while (temp1.next != null) {
+        while (temp1 != null) {
             stack1.push(temp1);
             temp1 = temp1.next;
         }
-        while (temp2.next != null) {
+        while (temp2 != null) {
             stack2.push(temp2);
             temp2 = temp2.next;
         }
