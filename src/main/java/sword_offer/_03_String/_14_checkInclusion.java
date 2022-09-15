@@ -2,9 +2,9 @@ package src.main.java.sword_offer._03_String;
 
 public class _14_checkInclusion {
     public static void main(String[] args) {
-        String s1 = "baa";
-        String s2 = "ccbcabacc";
-        boolean result = checkInclusion(s1, s2);
+        String s1 = "aba";
+        String s2 = "eidbacaooo";
+        boolean result = checkInclusion1(s1, s2);
         System.out.println(result);
     }
 
@@ -38,6 +38,41 @@ public class _14_checkInclusion {
             }
         }
         return false;
+    }
+    public static boolean checkInclusion1(String s1, String s2) {
+        // 使用双指针定位窗口大小，同时滑动，+hash表来完成
+        if(s1.length()>s2.length()){
+            return false;
+        }
+        int window = s1.length();
+        // 使用数组模拟26位的小写字母
+        int[] hash1 = new int[26];
+        // 在hash1中填充字符, 同时填充window的s2的字符
+        for (int i = 0; i < s1.length(); i++) {
+            hash1[s1.charAt(i)-'a']++;
+            hash1[s2.charAt(i)-'a']--;
+        }
+        if(allZero(hash1)){
+            return true;
+        }
+        //在s2中，从window开始，寻找变位词
+        for(int i=window;i<s2.length();i++){
+            // 窗口移动，左边的值+1还原，右边的值-1做比较
+            hash1[s2.charAt(i)-'a']--;
+            hash1[s2.charAt(i-window)-'a']++;
+            if(allZero(hash1)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static boolean allZero(int[] arr){
+        for(int num:arr){
+            if(num!=0){
+                return false;
+            }
+        }
+        return true;
     }
 }
 /*
